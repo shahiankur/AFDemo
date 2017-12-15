@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Alamofire.request("https://jsonplaceholder.typicode.com/posts/1", method: .get, parameters: [:], encoding: JSONEncoding.default, headers: [:])
+            .responseJSON{ (response) in
+        
+                print(response)
+                
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
